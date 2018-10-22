@@ -1,0 +1,3 @@
+Oct 20 18:27:07 stretch kernel: [57644.562152] [SLAB_TEST] Entering module.
+Oct 20 18:27:07 stretch kernel: [57644.562232] [SLAB_TEST] ptr1 = {42, 42}; ptr2 = {43, 43}
+Oct 20 18:27:13 stretch kernel: [57650.163215] Exiting module.

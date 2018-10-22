@@ -1,0 +1,29 @@
+Oct 20 18:07:04 stretch kernel: [56441.483650] [KMALLOC_TEST]: Entering module.
+Oct 20 18:07:04 stretch kernel: [56441.494422] ------------[ cut here ]------------
+Oct 20 18:07:04 stretch kernel: [56441.494429] WARNING: CPU: 0 PID: 23068 at /build/linux-tolFob/linux-4.9.110/mm/slab_common.c:887 kmalloc_slab+0x86/0xa0
+Oct 20 18:07:04 stretch kernel: [56441.494430] Modules linked in: p33(O+) msdos fat vboxvideo(O) ttm drm_kms_helper drm vboxsf(O) vboxguest(O) nls_utf8 isofs loop crct10dif_pclmul crc32_pclmul sg pcspkr evdev ghash_clmulni_intel serio_raw intel_rapl_perf video ac button battery ip_tables x_tables autofs4 ext4 crc16 jbd2 crc32c_generic fscrypto ecb mbcache sd_mod crc32c_intel ahci libahci aesni_intel aes_x86_64 glue_helper lrw gf128mul ablk_helper floppy cryptd libata scsi_mod e1000 i2c_piix4 psmouse [last unloaded: p20]
+Oct 20 18:07:04 stretch kernel: [56441.494461] CPU: 0 PID: 23068 Comm: insmod Tainted: P           O    4.9.0-7-amd64 #1 Debian 4.9.110-1
+Oct 20 18:07:04 stretch kernel: [56441.494462] Hardware name: innotek GmbH VirtualBox/VirtualBox, BIOS VirtualBox 12/01/2006
+Oct 20 18:07:04 stretch kernel: [56441.494464]  0000000000000000 ffffffff8a530644 0000000000000000 0000000000000000
+Oct 20 18:07:04 stretch kernel: [56441.494466]  ffffffff8a278d6e 0000000000800000 00000000024000c0 0000000000800000
+Oct 20 18:07:04 stretch kernel: [56441.494468]  ffffffffc042601f ffffffffc076a000 ffffffffc076a050 ffffffff8a3ab7b6
+Oct 20 18:07:04 stretch kernel: [56441.494470] Call Trace:
+Oct 20 18:07:04 stretch kernel: [56441.494474]  [<ffffffff8a530644>] ? dump_stack+0x5c/0x78
+Oct 20 18:07:04 stretch kernel: [56441.494477]  [<ffffffff8a278d6e>] ? __warn+0xbe/0xe0
+Oct 20 18:07:04 stretch kernel: [56441.494480]  [<ffffffffc042601f>] ? my_mod_init+0x1f/0x1000 [p33]
+Oct 20 18:07:04 stretch kernel: [56441.494482]  [<ffffffff8a3ab7b6>] ? kmalloc_slab+0x86/0xa0
+Oct 20 18:07:04 stretch kernel: [56441.494484]  [<ffffffff8a3e4df5>] ? __kmalloc+0x25/0x560
+Oct 20 18:07:04 stretch kernel: [56441.494485]  [<ffffffffc042602f>] ? my_mod_init+0x2f/0x1000 [p33]
+Oct 20 18:07:04 stretch kernel: [56441.494486]  [<ffffffffc0426000>] ? 0xffffffffc0426000
+Oct 20 18:07:04 stretch kernel: [56441.494488]  [<ffffffffc042601f>] ? my_mod_init+0x1f/0x1000 [p33]
+Oct 20 18:07:04 stretch kernel: [56441.494490]  [<ffffffff8a20218e>] ? do_one_initcall+0x4e/0x180
+Oct 20 18:07:04 stretch kernel: [56441.494492]  [<ffffffff8a3c915d>] ? __vunmap+0x6d/0xc0
+Oct 20 18:07:04 stretch kernel: [56441.494494]  [<ffffffff8a37f291>] ? do_init_module+0x5b/0x1f6
+Oct 20 18:07:04 stretch kernel: [56441.494496]  [<ffffffff8a302c1a>] ? load_module+0x25ba/0x2ac0
+Oct 20 18:07:04 stretch kernel: [56441.494498]  [<ffffffff8a2ff340>] ? __symbol_put+0x60/0x60
+Oct 20 18:07:04 stretch kernel: [56441.494499]  [<ffffffff8a303366>] ? SYSC_finit_module+0xc6/0xf0
+Oct 20 18:07:04 stretch kernel: [56441.494501]  [<ffffffff8a203b7d>] ? do_syscall_64+0x8d/0xf0
+Oct 20 18:07:04 stretch kernel: [56441.494503]  [<ffffffff8a814bce>] ? entry_SYSCALL_64_after_swapgs+0x58/0xc6
+Oct 20 18:07:04 stretch kernel: [56441.494504] ---[ end trace a3937423225b739f ]---
+Oct 20 18:07:04 stretch kernel: [56441.494505] [KMALLOC_TEST]: could not allocate 8388608 bytes
+Oct 20 18:07:12 stretch kernel: [56448.984883] Exiting module.

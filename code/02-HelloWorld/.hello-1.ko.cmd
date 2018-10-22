@@ -1,0 +1,1 @@
+cmd_/vagrant_data/02-HelloWorld/hello-1.ko := ld -r -m elf_x86_64  -z max-page-size=0x200000 -T /usr/src/linux-headers-4.9.0-7-common/scripts/module-common.lds --build-id  -o /vagrant_data/02-HelloWorld/hello-1.ko /vagrant_data/02-HelloWorld/hello-1.o /vagrant_data/02-HelloWorld/hello-1.mod.o ;  true

@@ -1,0 +1,35 @@
+Oct 20 20:03:33 stretch kernel: [63430.179400] [PERCPU]: Entering module.
+Oct 20 20:03:33 stretch kernel: [63430.179449] PGD 0 
+Oct 20 20:03:33 stretch kernel: [63430.179455] 
+Oct 20 20:03:33 stretch kernel: [63430.179461] Oops: 0002 [#1] SMP
+Oct 20 20:03:33 stretch kernel: [63430.179469] Modules linked in: p59(O+) msdos fat vboxvideo(O) ttm drm_kms_helper drm vboxsf(O) vboxguest(O) nls_utf8 isofs loop crct10dif_pclmul crc32_pclmul sg pcspkr evdev ghash_clmulni_intel serio_raw intel_rapl_perf video ac button battery ip_tables x_tables autofs4 ext4 crc16 jbd2 crc32c_generic fscrypto ecb mbcache sd_mod crc32c_intel ahci libahci aesni_intel aes_x86_64 glue_helper lrw gf128mul ablk_helper floppy cryptd libata scsi_mod e1000 i2c_piix4 psmouse [last unloaded: p57]
+Oct 20 20:03:33 stretch kernel: [63430.179615] CPU: 0 PID: 25492 Comm: insmod Tainted: P        W  O    4.9.0-7-amd64 #1 Debian 4.9.110-1
+Oct 20 20:03:33 stretch kernel: [63430.179636] Hardware name: innotek GmbH VirtualBox/VirtualBox, BIOS VirtualBox 12/01/2006
+Oct 20 20:03:33 stretch kernel: [63430.179654] task: ffff99ac1ac63100 task.stack: ffffb0dac0e14000
+Oct 20 20:03:33 stretch kernel: [63430.179696] RIP: 0010:[<ffffffffc042603f>]  [<ffffffffc042603f>] my_mod_init+0x3f/0x1000 [p59]
+Oct 20 20:03:33 stretch kernel: [63430.179721] RSP: 0018:ffffb0dac0e17cc0  EFLAGS: 00010283
+Oct 20 20:03:33 stretch kernel: [63430.179733] RAX: 0000000000000010 RBX: 0000000000000000 RCX: ffffffff8af23000
+Oct 20 20:03:33 stretch kernel: [63430.179750] RDX: 0000372ea000e98c RSI: 0000000000000200 RDI: ffffffff8af18e40
+Oct 20 20:03:33 stretch kernel: [63430.179766] RBP: ffffffffc0426000 R08: fffffffffffffffc R09: 0000000000000003
+Oct 20 20:03:33 stretch kernel: [63430.179783] R10: 0000000000000a80 R11: 000000000000e985 R12: ffff99ac1c4c3e80
+Oct 20 20:03:33 stretch kernel: [63430.179799] R13: ffff99ac1d00c680 R14: ffffffffc076a000 R15: ffffffffc076a050
+Oct 20 20:03:33 stretch kernel: [63430.179816] FS:  00007f8e4df2a700(0000) GS:ffff99ac1fc00000(0000) knlGS:0000000000000000
+Oct 20 20:03:33 stretch kernel: [63430.179834] CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+Oct 20 20:03:33 stretch kernel: [63430.179848] CR2: 0000372e2af3198c CR3: 00000000164d6000 CR4: 0000000000060670
+Oct 20 20:03:33 stretch kernel: [63430.179868] Stack:
+Oct 20 20:03:33 stretch kernel: [63430.179874]  0000000000000000 ffffffff8a20218e ffffb0dac0e8b000 ffffb0dac0e8afff
+Oct 20 20:03:33 stretch kernel: [63430.179895]  92d15ed14bfb5bb0 0000000000000286 ffff99ac1d275c00 ffffffff8a3c915d
+Oct 20 20:03:33 stretch kernel: [63430.179916]  92d15ed14bfb5bb0 ffffffffc076a000 92d15ed14bfb5bb0 ffffffffc076a000
+Oct 20 20:03:33 stretch kernel: [63430.179937] Call Trace:
+Oct 20 20:03:33 stretch kernel: [63430.179947]  [<ffffffff8a20218e>] ? do_one_initcall+0x4e/0x180
+Oct 20 20:03:33 stretch kernel: [63430.179964]  [<ffffffff8a3c915d>] ? __vunmap+0x6d/0xc0
+Oct 20 20:03:33 stretch kernel: [63430.179978]  [<ffffffff8a37f291>] ? do_init_module+0x5b/0x1f6
+Oct 20 20:03:33 stretch kernel: [63430.179993]  [<ffffffff8a302c1a>] ? load_module+0x25ba/0x2ac0
+Oct 20 20:03:33 stretch kernel: [63430.180007]  [<ffffffff8a2ff340>] ? __symbol_put+0x60/0x60
+Oct 20 20:03:33 stretch kernel: [63430.180021]  [<ffffffff8a303366>] ? SYSC_finit_module+0xc6/0xf0
+Oct 20 20:03:33 stretch kernel: [63430.180456]  [<ffffffff8a203b7d>] ? do_syscall_64+0x8d/0xf0
+Oct 20 20:03:33 stretch kernel: [63430.180914]  [<ffffffff8a814bce>] ? entry_SYSCALL_64_after_swapgs+0x58/0xc6
+Oct 20 20:03:33 stretch kernel: [63430.181350] Code: 00 00 00 e8 54 26 f8 c9 83 ca ff 48 85 c0 48 89 05 17 43 34 00 0f 84 be 00 00 00 31 c0 48 8b 88 e0 d3 c6 8a 48 8b 15 01 43 34 00 <c7> 04 11 00 00 00 00 48 83 c0 08 48 3d 00 10 00 00 75 df 0f ae 
+Oct 20 20:03:33 stretch kernel: [63430.183470]  RSP <ffffb0dac0e17cc0>
+Oct 20 20:03:33 stretch kernel: [63430.183910] CR2: 0000372e2af3198c
+Oct 20 20:03:33 stretch kernel: [63430.186592] ---[ end trace a3937423225b73a0 ]---
